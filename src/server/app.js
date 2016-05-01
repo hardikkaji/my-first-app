@@ -17,6 +17,8 @@ app.use('/api', require('./routes.config'));
 app.use(express.static('./src/client/'));
 app.use(express.static('./'));
 app.use(express.static('./tmp'));
+//app.use(express.static('./bower_components'));
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 // Any invalid calls for templateUrls are under app/* and should return 404
 app.use('/app/*', function(req, res, next) {
 	four0four.send404(req, res);
