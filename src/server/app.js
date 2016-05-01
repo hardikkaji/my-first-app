@@ -11,14 +11,22 @@ app.use(bodyParser.urlencoded({
 }))
 
 // parse application/json
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 
-//listening to default page.
-app.get('/', function(request, response) {
-	response.send('Hello World.!');
+app.use('/api', require('./routes.config'));
+app.use(express.static('./src/client/'));
+app.use(express.static('./'));
+app.use(express.static('./tmp'));
+// Any invalid calls for templateUrls are under app/* and should return 404
+app.use('/app/*', function(req, res, next) {
+	four0four.send404(req, res);
 });
+// Any deep link calls should return index.html
+app.use('/*', express.static('./src/client/index.html'));
 
 //listening to port and when port is ready to serve request logging message.
 app.listen(3000, function() {
 	console.log('Listening on port 3000');
+	console.log('__dirname = ' + __dirname +
+		'\nprocess.cwd = ' + process.cwd());
 });
