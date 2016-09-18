@@ -1,49 +1,72 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>NodeJS, Express & AngularJS Demo</title>
-	<link rel="stylesheet"
-			type="text/css"
-			href="./bower_components/bootstrap/dist/css/bootstrap.min.css">
-			<!-- TODO: Need to move this files to SASS. -->
-			<style>
-				body {
-					padding-top: 20px;
-					padding-bottom: 20px;
-				}
 
-				.navbar {
-					margin-bottom: 20px;
-				}
-			</style>
+<head>
+    <title>Todo App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link href="styles/styles.css" rel="stylesheet">
 </head>
+
 <body>
-	<div class="container">
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="#">NEA Demo :)</a>
-				</div>
-				<div id="navbar" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
-						<li><a href="#">About</a></li>
-						<li><a href="#">Contact</a></li>
-					</ul>
-				</div><!--/.nav-collapse -->
-			</div><!--/.container-fluid -->
-		</nav>
-	</div>
-	<!-- TODO: Remove this using automating injecting bower components-->
-	<script type="text/javascript" src="./bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript"
-			src="./bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+    <header>
+        <input type="text" placeholder="Enter your activity..">
+        <button id="add">
+			<todo-svg type="add"></todo-svg>
+		</button>
+    </header>
+    <div class="container">
+        <ul class="todo" id="todo">
+            <li>
+                This is first item.
+                <div class="buttons">
+                    <button class="remove">
+                        <todo-svg type="remove"></todo-svg>
+                    </button>
+                    <button class="complete">
+                        <todo-svg type="complete"></todo-svg>
+                    </button>
+                </div>
+            </li>
+            <li>
+                This is second item.
+                <div class="buttons">
+                    <button class="remove">
+                        <todo-svg type="remove"></todo-svg>
+                    </button>
+                    <button class="complete">
+                        <todo-svg type="complete"></todo-svg>
+                    </button>
+                </div>
+            </li>
+        </ul>
+        <ul class="todo" id="completed">
+            <li>
+                This is first item.
+                <div class="buttons">
+                    <button class="remove">
+                        <todo-svg type="remove"></todo-svg>
+                    </button>
+                    <button class="complete">
+                        <todo-svg type="complete"></todo-svg>
+                    </button>
+                </div>
+            </li>
+            <li>
+                This is second item.
+                <div class="buttons">
+                    <button class="remove">
+                        <todo-svg type="remove"></todo-svg>
+                    </button>
+                    <button class="complete">
+                        <todo-svg type="complete"></todo-svg>
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
 </body>
+
 </html>
